@@ -25,6 +25,9 @@ let user_payload = []
 
 let minimums = {}
 
+var enable_short = 0 //enable or disable short
+console.log("ENABLE_SHORT IS "+ enable_short)
+
 //////////////////////////////////////////////////////////////////////////////////
 
 const margin_pairs = ['ADABTC', 'ATOMBTC','BATBTC','BCHBTC','BNBBTC','DASHBTC','EOSBTC','ETCBTC',
@@ -214,7 +217,7 @@ socket.on('sell_signal', async (signal) => {
     //console.log(signal)
     const tresult = _.findIndex(user_payload, (o) => { return o.stratid == signal.stratid })
     if (tresult > -1) {
-        if (!trading_pairs[signal.pair+signal.stratid] && signal.new) {
+        if (enable_short === 1 &&!trading_pairs[signal.pair+signal.stratid] && signal.new) {
             console.log(colors.grey('SELL_SIGNAL :: ENTER SHORT TRADE ::', signal.stratname, signal.stratid, signal.pair))
             trading_pairs[signal.pair+signal.stratid] = true
             trading_types[signal.pair+signal.stratid] = "SHORT"
