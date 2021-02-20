@@ -30,9 +30,7 @@ console.log("ENABLE_SHORT IS "+ enable_short)
 
 //////////////////////////////////////////////////////////////////////////////////
 
-const margin_pairs = ['ADABTC', 'ATOMBTC','BATBTC','BCHBTC','BNBBTC','DASHBTC','EOSBTC','ETCBTC',
-    'ETHBTC','IOSTBTC','IOTABTC','LINKBTC','LTCBTC','MATICBTC','NEOBTC','ONTBTC','QTUMBTC',
-    'RVNBTC','TRXBTC','VETBTC','XLMBTC','XMRBTC','XRPBTC','XTZBTC','ZECBTC']
+const margin_pairs = ['LINKBTC']
 
 //////////////////////////////////////////////////////////////////////////////////
 
